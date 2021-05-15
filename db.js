@@ -1,7 +1,7 @@
 var mongoose = require('mongoose')
 
 var dbConnection = mongoose.connection
-var dbURL = 'mongodb://localhost'
+var dbURL = process.env.DB_URL || 'mongodb://localhost'
 var dbConfig = { useNewUrlParser: true }
 
 dbConnection.on('open', function () {
